@@ -1,0 +1,115 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum UserRole {
+  CUSTOMER
+  AGENT
+  ADMIN
+}
+
+enum TicketStatus {
+  OPEN
+  IN_PROGRESS
+  RESOLVED
+  CLOSED
+}
+
+enum TicketPriority {
+  LOW
+  MEDIUM
+  HIGH
+  URGENT
+}
+
+model User {
+  id           String    @id @default(uuid())
+  firstName    String
+  lastName     String
+  email        String    @unique
+  passwordHash String
+  role         UserRole
+  deletedAt    DateTime?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  agentCategories AgentCategory[]
+  customerTickets Ticket[]        @relation("CustomerTickets")
+  assignedTickets Ticket[]        @relation("AssignedTickets")
+  messages        TicketMessage[]
+}
+
+model Category {
+  id          String   @id @default(uuid())
+  name        String   @unique
+  description String
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  agentCategories AgentCategory[]
+  tickets         Ticket[]
+}
+
+model AgentCategory {
+  agentId    String
+  categoryId String
+
+  agent    User     @relation(fields: [agentId], references: [id])
+  category Category @relation(fields: [categoryId], references: [id])
+
+  @@id([agentId, categoryId])
+}
+
+model Ticket {
+  id           String         @id @default(uuid())
+  ticketNumber String         @unique
+  subject      String
+  description  String
+  status       TicketStatus   @default(OPEN)
+  priority     TicketPriority @default(MEDIUM)
+
+  customerId String
+  customer   User   @relation("CustomerTickets", fields: [customerId], references: [id])
+
+  agentId String?
+  agent   User?   @relation("AssignedTickets", fields: [agentId], references: [id])
+
+  categoryId String
+  category   Category @relation(fields: [categoryId], references: [id])
+
+  resolvedAt DateTime?
+  closedAt   DateTime?
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+
+  messages TicketMessage[]
+
+  @@index([customerId])
+  @@index([agentId])
+  @@index([categoryId])
+  @@index([status])
+  @@index([priority])
+}
+
+model TicketMessage {
+  id String @id @default(uuid())
+
+  ticketId String
+  ticket   Ticket @relation(fields: [ticketId], references: [id])
+
+  authorId String
+  author   User   @relation(fields: [authorId], references: [id])
+
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([ticketId])
+  @@index([authorId])
+}
