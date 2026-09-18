@@ -1,0 +1,62 @@
+@use "../tokens/semantic" as *;
+@use "../tokens/spacing" as *;
+@use "../tokens/radius" as *;
+@use "../tokens/typography" as *;
+
+:root {
+  --background: #{$background-light};
+  --surface: #{$surface-light};
+  --surface-secondary: #{$surface-secondary-light};
+  --text-primary: #{$text-primary-light};
+  --text-secondary: #{$text-secondary-light};
+  --text-muted: #{$text-muted-light};
+  --primary: #{$color-primary};
+  --primary-light: #{$color-primary-light};
+  --primary-hover: #{$color-primary-hover};
+  --primary-active: #{$color-primary-active};
+  --secondary: #{$color-secondary};
+  --secondary-hover: #{$color-secondary-hover};
+  --border: #{$border-light};
+  --success: #{$success};
+  --warning: #{$warning};
+  --danger: #{$danger};
+  --info: #{$info};
+  --focus-ring: #{$focus-ring};
+
+  --space-0: #{$space-0};
+  --space-1: #{$space-1};
+  --space-2: #{$space-2};
+  --space-3: #{$space-3};
+  --space-4: #{$space-4};
+  --space-5: #{$space-5};
+  --space-6: #{$space-6};
+  --space-7: #{$space-7};
+  --space-8: #{$space-8};
+  --space-9: #{$space-9};
+  --space-10: #{$space-10};
+
+  --radius-sm: #{$radius-sm};
+  --radius-md: #{$radius-md};
+  --radius-lg: #{$radius-lg};
+  --radius-xl: #{$radius-xl};
+  --radius-full: #{$radius-full};
+
+  --font-xs: #{$font-xs};
+  --font-sm: #{$font-sm};
+  --font-md: #{$font-md};
+  --font-lg: #{$font-lg};
+  --font-xl: #{$font-xl};
+  --font-2xl: #{$font-2xl};
+  --font-3xl: #{$font-3xl};
+  --font-4xl: #{$font-4xl};
+
+  --font-light: #{$font-light};
+  --font-regular: #{$font-regular};
+  --font-medium: #{$font-medium};
+  --font-semibold: #{$font-semibold};
+  --font-bold: #{$font-bold};
+
+  --leading-sm: #{$line-height-sm};
+  --leading-md: #{$line-height-md};
+  --leading-lg: #{$line-height-lg};
+}

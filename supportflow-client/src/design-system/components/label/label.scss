@@ -1,0 +1,12 @@
+.ds-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--font-sm);
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+.ds-label-required {
+  color: var(--danger);
+}

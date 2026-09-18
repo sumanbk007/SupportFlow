@@ -1,0 +1,26 @@
+.root {
+  width: 100%;
+  max-width: 430px;
+  display: flex;
+  flex-direction: column;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+}
+
+.link {
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+
+  font-weight: var(--font-semibold);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--primary);
+  }
+}

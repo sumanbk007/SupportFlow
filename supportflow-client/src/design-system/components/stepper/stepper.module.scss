@@ -1,0 +1,78 @@
+.stepper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-left: 20px;
+}
+
+.stepperRow {
+  display: flex;
+  align-items: center;
+  flex: 1;
+
+  &:last-child {
+    flex: 0;
+  }
+}
+
+.stepItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.stepNode {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: var(--font-sm);
+  font-weight: var(--font-semibold);
+  flex-shrink: 0;
+  transition: box-shadow 0.2s;
+
+  border: 2px solid var(--border);
+  color: var(--text-muted);
+  background: var(--surface);
+}
+
+.stepNode--active {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: var(--surface);
+}
+.stepNode--completed {
+  background: var(--success);
+  border-color: var(--success);
+  color: var(--surface);
+}
+
+.stepLabel {
+  font-size: var(--font-sm);
+  font-weight: var(--font-medium);
+  white-space: nowrap;
+  color: var(--text-muted);
+}
+
+.stepLabel--active {
+  color: var(--primary);
+  font-weight: var(--font-semibold);
+}
+
+.stepLabel--completed {
+  color: var(--text-primary);
+}
+
+.stepConnector {
+  flex: 1;
+  height: 2px;
+  margin: 0 var(--space-2);
+  border-radius: 1px;
+  background: var(--border);
+}
+
+.stepConnector--filled {
+  background: var(--success);
+}

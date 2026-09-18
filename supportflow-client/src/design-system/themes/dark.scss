@@ -1,0 +1,28 @@
+@use '../tokens/semantic' as *;
+
+[data-theme='dark'] {
+  --background: #{$background-dark};
+
+  --surface: #{$surface-dark};
+  --surface-secondary: #{$surface-secondary-dark};
+
+  --text-primary: #{$text-primary-dark};
+  --text-secondary: #{$text-secondary-dark};
+  --text-muted: #{$text-muted-dark};
+
+  --primary: #{$color-primary};
+  --primary-hover: #{$color-primary-hover};
+  --primary-active: #{$color-primary-active};
+
+  --secondary: #{$color-secondary};
+  --secondary-hover: #{$color-secondary-hover};
+
+  --border: #{$border-dark};
+
+  --success: #{$success};
+  --warning: #{$warning};
+  --danger: #{$danger};
+  --info: #{$info};
+
+  --focus-ring: #{$focus-ring};
+}

@@ -1,0 +1,130 @@
+.ds-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ds-input-wrapper--full-width {
+  width: 100%;
+}
+
+.ds-input-container {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  background: var(--surface);
+
+  overflow: hidden;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.ds-input-container:focus-within {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.ds-input-container--error {
+  border-color: var(--danger);
+}
+
+.ds-input-container--error:focus-within {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+}
+
+.ds-input-container--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.ds-input {
+  flex: 1;
+  width: 100%;
+  padding-left: 8px;
+  min-height: 40px;
+  border: none;
+  outline: none;
+  background: transparent;
+  appearance: none;
+  -webkit-appearance: none;
+  color: var(--text-primary);
+  font-size: 14px;
+}
+
+.ds-input::placeholder {
+  color: var(--text-primary);
+}
+
+.ds-input:disabled {
+  cursor: not-allowed;
+}
+
+/* ICON SYSTEM */
+.ds-input-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--text-primary);
+
+  flex-shrink: 0;
+
+  padding: 0 0 0 10px;
+
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+
+  &.right-input-icon {
+    padding: 0 8px 0 10px !important;
+  }
+}
+
+.ds-input-icon:hover {
+  color: var(--text-primary);
+}
+
+.ds-input-icon:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* SIZE SYSTEM APPLIES TO CONTAINER (IMPORTANT FIX) */
+.ds-input-container--sm .ds-input {
+  min-height: 32px;
+  font-size: 12px;
+}
+
+.ds-input-container--md .ds-input {
+  min-height: 40px;
+  font-size: 14px;
+}
+
+.ds-input-container--lg .ds-input {
+  min-height: 48px;
+  font-size: 16px;
+}
+
+/* TEXT HELPERS */
+.ds-input-helper {
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--text-secondary);
+}
+
+.ds-input-error {
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: start;
+  color: var(--danger);
+}

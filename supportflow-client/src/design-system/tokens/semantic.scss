@@ -1,0 +1,43 @@
+@use "./palette" as *;
+
+// Brand
+$color-primary: $indigo-600;
+$color-primary-hover: $indigo-700;
+$color-primary-active: $indigo-800;
+$color-primary-light: $indigo-400;
+
+$color-secondary: $teal-500;
+$color-secondary-hover: $teal-600;
+
+// Light Theme
+$background-light: $gray-50;
+
+$surface-light: #ffffff;
+$surface-secondary-light: $gray-100;
+
+$text-primary-light: $gray-900;
+$text-secondary-light: $gray-600;
+$text-muted-light: $gray-400;
+
+$border-light: $gray-200;
+
+// Dark Theme
+$background-dark: $gray-900;
+
+$surface-dark: $gray-800;
+$surface-secondary-dark: $gray-700;
+
+$text-primary-dark: $gray-50;
+$text-secondary-dark: $gray-300;
+$text-muted-dark: $gray-500;
+
+$border-dark: $gray-700;
+
+// States
+$success: $green-500;
+$warning: $yellow-500;
+$danger: $red-500;
+$info: $indigo-500;
+
+// Focus
+$focus-ring: $indigo-300;
